@@ -1,7 +1,4 @@
-# CGPA-Calculator
-CGPA Calculator
-# Things i learnt
-## Things i learnt
+# CGPA-Calculator:
 # CGPA Calculator
 
 The **CGPA Calculator** is a simple tool designed to help students calculate their Cumulative Grade Point Average (CGPA) based on their individual course grades and credit hours. This tool provides an easy-to-use interface for entering grades and calculating CGPA on a scale (e.g., 4.0 or 10.0, depending on the system used by the institution).
