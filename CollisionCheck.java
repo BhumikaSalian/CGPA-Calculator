@@ -1,44 +1,34 @@
-import java.io.*;
-class Collide extends Exception
-{
-    String message;
-    Collide(String message)
-    {
-       super(message);
-     } 
-}
-class CollisionCheck
-{
-    public static void main(String args[])throws IOException
-    {
-          String t1 = null;
-          String t2 = null;
-          try
-          {
-          
-                 DataInputStream obj = new DataInputStream(System.in);
-                 System.out.println("Enter the Truck 1's direction");
-                 t1 = obj.readLine();
-          
-                System.out.println("Enter the Truck 2's direction");
-                t2 = obj.readLine();
-          
-                if(!t1.equals(t2))
-          {  
-                throw new Collide("Truck t2 must head " + t1);
-          }
-          else
-          {
-               System.out.println("No problem in the directions");
-          }
-          }
-       catch (Collide c)
-       {
-            System.out.println("Exception caught");
-            t2 = t1;
-            System.out.println("Collision was avoided by redirection");
-       }
-          System.out.println("The direction of t1 :" + t1);
-          System.out.println("The direction of t2 :" + t2);
+import java.util.Scanner;
+
+public class CGPACalculator {
+
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input: number of subjects
+        System.out.print("Enter the number of subjects: ");
+        int numSubjects = scanner.nextInt();
+        
+        // Array to store grade points for each subject
+        double[] gradePoints = new double[numSubjects];
+        
+        // Input grade points for each subject
+        double totalGradePoints = 0;
+        for (int i = 0; i < numSubjects; i++) {
+            System.out.print("Enter grade point for subject " + (i + 1) + ": ");
+            gradePoints[i] = scanner.nextDouble();
+            totalGradePoints += gradePoints[i];
+        }
+        
+        // Calculate CGPA
+        double cgpa = totalGradePoints / numSubjects;
+        
+        // Output the CGPA
+        System.out.printf("Your CGPA is: %.2f\n", cgpa);
+        
+        // Close the scanner
+        scanner.close();
     }
 }
+
